@@ -3,6 +3,9 @@ SecondApp::Application.routes.draw do
   get "static_pages/help"
   get "static_pages/about"
 
+  root  'static_pages#home'
+  match '/help',    to: 'static_pages#help',    via: 'get'
+
   resources :microposts
 
   resources :users
